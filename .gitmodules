@@ -1,7 +1,7 @@
 [submodule "asset/core"]
 	path = asset/core
 	url = https://github.com/onepiece-framework/op-core.git
-	branch = 2022
+	branch = php70
 [submodule "webpack"]
 	path = webpack
 	url = https://github.com/onepiece-framework/op-module-webpack.git
@@ -41,11 +41,11 @@
 [submodule "asset/unit/git"]
 	path = asset/unit/git
 	url = https://github.com/onepiece-framework/op-unit-git
-	branch = 2022
+	branch = php70
 [submodule "asset/unit/ci"]
 	path = asset/unit/ci
 	url = https://github.com/onepiece-framework/op-unit-ci.git
-	branch = 2022
+	branch = php70
 [submodule "asset/unit/cd"]
 	path = asset/unit/cd
 	url = https://github.com/onepiece-framework/op-unit-cd.git
