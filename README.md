@@ -8,6 +8,13 @@
 
 # The "onepiece-framework" is insanely great!!
 
+## php70 branch how to use
+
+ 1. `git checkout origin/php70 -b php70`
+ 2. `git submodule sync`
+ 3. `php git.php asset/git/fetch.php `
+ 4. `php git.php asset/git/rebase.php `
+
 ## 2022 had a big change!!
 
  The first is "OP()" function.
