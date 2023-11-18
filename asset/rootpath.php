@@ -60,6 +60,7 @@ switch( php_sapi_name() ){
 //  Branch per each SAPI.
 switch( $sapi = php_sapi_name() ){
     //  Web Servers
+    case 'fpm-fcgi':
     case 'apache2handler':
         //  App root.
         if( empty($_SERVER['APP_ROOT']) ){
@@ -93,6 +94,7 @@ switch( $sapi = php_sapi_name() ){
         break;
 
     default:
+        echo __FILE__ .' #'. __LINE__ . ' - ';
         exit("Undefined SAPI. ($sapi)");
 }
 
