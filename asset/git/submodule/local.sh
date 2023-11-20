@@ -9,10 +9,10 @@
  #
 
 # Check command
-if !(which realpath >/dev/null 2>&1); then
-    echo "The following command is not installed: realpath";
-    exit 1;
-fi
+# if !(which realpath >/dev/null 2>&1); then
+#     echo "The following command is not installed: realpath";
+#     exit 1;
+# fi
 
 # user name
 USER_NAME=${1}
@@ -33,7 +33,7 @@ fi
 cp .gitmodules .gitmodules_github
 
 # --> sudo port install realpath
-HOME=$(realpath ~/)
+# HOME=$(realpath ~/)
 
 # Replace
 sed -i -e "s|https://github.com/${USER_NAME}/|${HOME}/repo/op/|g" .gitmodules
