@@ -34,7 +34,7 @@ cp .gitmodules .gitmodules_local
 sed -i -e "s|${HOME}/repo/|${HOST_NAME}:~/repo/|g" .gitmodules
 
 # Backup
-cp .gitmodules .gitmodules_repo
+cp .gitmodules .gitmodules_$HOST_NAME
 
 # Sync
 git submodule sync
