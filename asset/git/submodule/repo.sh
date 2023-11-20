@@ -10,6 +10,7 @@
 
 # user name
 USER_NAME=${1}
+HOST_NAME=${2:-repo}
 
 # Check argument.
 if [ -z "$USER_NAME" ]; then
@@ -30,7 +31,7 @@ cp .gitmodules .gitmodules_local
 # HOME=$(realpath ~/)
 
 # Change to remote path from local path.
-sed -i -e "s|${HOME}/repo/|repo:~/repo/|g" .gitmodules
+sed -i -e "s|${HOME}/repo/|${HOST_NAME}:~/repo/|g" .gitmodules
 
 # Backup
 cp .gitmodules .gitmodules_repo
