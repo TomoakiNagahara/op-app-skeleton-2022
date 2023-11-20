@@ -27,7 +27,7 @@ fi
 cp .gitmodules .gitmodules_local
 
 # --> sudo port install realpath
-HOME=$(realpath ~/)
+# HOME=$(realpath ~/)
 
 # Change to remote path from local path.
 sed -i -e "s|${HOME}/repo/|repo:~/repo/|g" .gitmodules
