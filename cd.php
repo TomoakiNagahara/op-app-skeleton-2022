@@ -36,6 +36,11 @@ try {
 	include(__DIR__.'/asset/init.php');
 
 	//	...
+	if( OP()->Unit('CI')->Dryrun() ){
+		return;
+	}
+
+	//	...
 	OP::Unit('CD')->Auto();
 	if( OP::Request('display') ){
 		echo "\n";
