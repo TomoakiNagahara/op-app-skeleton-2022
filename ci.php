@@ -47,7 +47,9 @@ try {
 	Env::AppID('self-check');
 
 	//	...
-	OP::Unit('CI')->Auto();
+	if(!OP::Unit('CI')->Auto() ){
+		$exit = __LINE__;
+	}
 
 } catch ( \Throwable $e ){
 	//	...
