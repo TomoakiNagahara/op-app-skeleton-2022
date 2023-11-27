@@ -53,9 +53,12 @@ try {
 	//	...
 	echo "\n\n";
 	echo "Exception: {$message}\n\n";
+	echo $e->getTraceAsString();
+	/*
 	foreach( $e->getTrace() as $trace){
 		echo ' * '.OP::DebugBacktraceToString($trace)."\n";
 	}
+	*/
 	echo "\n";
 
 	//	...
