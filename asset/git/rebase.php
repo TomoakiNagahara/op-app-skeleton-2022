@@ -26,7 +26,7 @@ namespace OP;
 
 //  ...
 if(!function_exists('OP') ){
-    echo "Usage: php git.php asset/git/push.php remote=origin display=1 debug=1\n";
+    echo "Usage: php git.php asset/git/rebase.php remote=origin branch=2022 display=1 debug=1\n";
     exit(__LINE__);
 }
 
@@ -34,9 +34,15 @@ if(!function_exists('OP') ){
 $exit    = 0;
 $display = OP::Request('display') ?? 1;
 $remote  = OP::Request('remote')  ?? 'origin';
+$branch  = OP::Request('branch')  ?? _OP_APP_BRANCH_;
 
 /* @var $git UNIT\Git */
 $git = OP::Unit('Git');
+
+//	Do main repository.
+$git->Stash()->Save();
+$git->Rebase($remote, $branch);
+$git->Stash()->Pop();
 
 //	...
 $configs = $git->SubmoduleConfig();
@@ -74,12 +80,6 @@ if(!chdir($path) ){
 	throw new \Exception("chdir was failed. ({$meta}, {$path})");
 }
 if( $display ){ D("Change Directory: {$path}"); }
-
-//	...
-$branch = OP::Request('branch') ?? 'master';
-$git->Save();
-$git->Rebase($remote, $branch);
-$git->Pop();
 
 //	...
 exit($exit);
