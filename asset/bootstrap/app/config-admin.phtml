@@ -22,6 +22,7 @@ $file = preg_replace(['|//\t|','|\t|','|\n+|','|,\n|','|,\n\n\]|'], ['//  ','   
 
 //	...
 if( Env::isCI() ){
+	/*
 	//	...
 	if(!file_put_contents(OP::MetaPath('asset:/config/').'_admin.php',  OP::Decode($file)) ){
 		echo 'Could not write to this file. (asset:/config/_admin.php)';
@@ -29,6 +30,10 @@ if( Env::isCI() ){
 	}
 	//	...
 	return true;
+	*/
+
+	//	...
+	return include(__DIR__.'/config-admin.php');
 }
 
 //	...
