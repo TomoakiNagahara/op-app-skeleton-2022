@@ -65,7 +65,7 @@ foreach( $configs as $config ){
 	}
 
 	//	...
-	$branch = $config['branch'] ?? 'master';
+	$branch = $config['branch'] ?? $git->Branch()->Main();
 
 	//	...
 	$git->Save();
