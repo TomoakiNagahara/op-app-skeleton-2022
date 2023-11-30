@@ -1,6 +1,8 @@
 <?php
 /** op-app-skeleton-2020-nep:/asset/git/fetch.php
  *
+ * Git fetch main repository and submodule repositories.
+ *
  * <pre>
  * ```sh
  * php git.php asset/git/fetch.php remote=orign display=1 debug=0
@@ -26,7 +28,7 @@ namespace OP;
 
 //  ...
 if(!function_exists('OP') ){
-    echo "Usage: php git.php asset/git/push.php remote=origin display=1 debug=1\n";
+    echo "Usage: php git.php asset/git/fetch.php remote=origin display=1 debug=1\n";
     exit(__LINE__);
 }
 
