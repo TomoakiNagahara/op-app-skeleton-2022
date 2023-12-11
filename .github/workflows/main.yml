@@ -6,9 +6,9 @@ name: CI of op-app-skeleton-2022-nep
 on:
   # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches: [ "master" ]
+    branches: [ "master","2022" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master","2022" ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
